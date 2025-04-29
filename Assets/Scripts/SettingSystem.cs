@@ -15,7 +15,7 @@ public class SettingSystem : MonoBehaviour
             volumeSlider.value = savedVolume;
             volumeSlider.onValueChanged.AddListener(SetVolume);
         }
-
+        
         if (fullscreenToggle != null)
         {
             bool isFullscreen = PlayerPrefs.GetInt("Fullscreen", Screen.fullScreen ? 1 : 0) == 1;

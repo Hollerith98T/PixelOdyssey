@@ -1,10 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Resume : MonoBehaviour
 {
-    [SerializeField] public GameObject resumeScreen;
+    [SerializeField] private GameObject resumeScreen;
 
     public void ResumeGame()
     {
@@ -12,6 +10,7 @@ public class Resume : MonoBehaviour
         CharacterControl.moving = true;
         Time.timeScale = 1;
 
-        resumeScreen.SetActive(false);
+        if (resumeScreen != null)
+            resumeScreen.SetActive(false);
     }
 }

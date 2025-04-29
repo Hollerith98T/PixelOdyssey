@@ -36,10 +36,8 @@ public static class GameInputManager
 
         keyMapping[keyMap] = key;
 
-        // Use Enum.TryParse to convert string to enum value
         if (Enum.TryParse(keyMap, out keyMaps direction))
         {
-            // Use the enum value as index
             int index = (int)direction;
             defaults[index] = key;
             Debug.Log($"{keyMap} key set to: {key}");

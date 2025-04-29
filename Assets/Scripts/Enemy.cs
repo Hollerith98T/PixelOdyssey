@@ -15,10 +15,6 @@ public class Enemy : MonoBehaviour, IEnemy
 
     public void TakeDamage(float amount)
     {
-        // In questa versione base, non gestiamo la salute direttamente qui.
-        // La logica di danno potrebbe essere gestita da altri script o nell'AI.
-        // Per ora, potremmo solo chiamare Die() se il danno è sufficiente.
-        // Esempio semplificato:
         if (amount > 0)
         {
             Die();
@@ -40,9 +36,9 @@ public class Enemy : MonoBehaviour, IEnemy
         {
             audiosourceEnemy.PlayOneShot(audioAttackEnemy, 0.5f);
             anim.SetBool("enemyAttack", true);
-            attack = true; // Imposta il flag di attacco
+            attack = true;
         }
-        else if (!Death.isAttack) // Resetta l'animazione se non si sta attaccando più
+        else if (!Death.isAttack)
         {
             anim.SetBool("enemyAttack", false);
             attack = false;
@@ -56,7 +52,6 @@ public class Enemy : MonoBehaviour, IEnemy
 
     private void Update()
     {
-        // Gestione dell'animazione di attacco basata su una variabile esterna (Death.isAttack)
         if (Death.isAttack && attack)
         {
             anim.SetBool("enemyAttack", true);
@@ -72,7 +67,7 @@ public class Enemy : MonoBehaviour, IEnemy
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            TakeDamage(1f); // Anche un semplice tocco potrebbe causare la morte in questa versione base
+            TakeDamage(1f);
         }
     }
 
@@ -82,10 +77,5 @@ public class Enemy : MonoBehaviour, IEnemy
         {
             Attack(other.gameObject);
         }
-    }
-
-    void EnemyDestroy()
-    {
-        // Non più chiamato direttamente, la logica è in Die()
     }
 }

@@ -18,8 +18,8 @@ public class Score : MonoBehaviour
     {
         _audioSource = GetComponent<AudioSource>();
     }
-    
-    private void OnTriggerEnter2D(Collider2D other) 
+
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Star"))
         {
@@ -36,17 +36,17 @@ public class Score : MonoBehaviour
                     var tempColor0 = _carrotsImage0.color;
                     tempColor0.a = 1f;
                     _carrotsImage0.color = tempColor0;
-                break;
+                    break;
                 case 1:
                     var tempColor1 = _carrotsImage1.color;
                     tempColor1.a = 1f;
                     _carrotsImage1.color = tempColor1;
-                break;
+                    break;
                 case 2:
                     var tempColor2 = _carrotsImage2.color;
                     tempColor2.a = 1f;
                     _carrotsImage2.color = tempColor2;
-                break;
+                    break;
             }
             carrot++;
             _audioSource.PlayOneShot(audioStar, 0.05f);

@@ -84,7 +84,6 @@ public class Death : MonoBehaviour
 
         Debug.Log($"Morte giocatore attivata ({gameObject.name}). Causa: {reason}");
 
-        // Ferma il timer SOLO se la morte NON è dovuta al timeout
         if (reason != "Timeout" && Timer.Instance != null && Timer.Instance.IsRunning())
         {
             Timer.Instance.StopTimer();
@@ -93,7 +92,6 @@ public class Death : MonoBehaviour
 
         anim.SetTrigger("death");
         isAttack = true;
-        // Assicurati che HealthSystem.health sia gestito correttamente altrove
         HealthSystem.health--;
         deathcounter++;
         _collider2D.enabled = false;
@@ -110,7 +108,6 @@ public class Death : MonoBehaviour
         _collider2D.enabled = true;
         gameObject.transform.position = checkPos;
 
-        // Riavvia il timer dopo il respawn, indipendentemente dalla causa della morte
         if (Timer.Instance != null)
         {
             Timer.Instance.ResetAndStartTimer();
@@ -120,8 +117,5 @@ public class Death : MonoBehaviour
         {
             Debug.LogError("Istanza del Timer non trovata durante il respawn!");
         }
-
-        // Assicurati che CharacterControl.moving sia gestito correttamente altrove
-        // CharacterControl.moving = true;
     }
 }

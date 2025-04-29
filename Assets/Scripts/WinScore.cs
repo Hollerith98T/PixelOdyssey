@@ -18,7 +18,7 @@ public class WinScore : MonoBehaviour
         _starText.text = Score.score.ToString("000");
         _killText.text = Enemy.killcounter.ToString("000");
         _deathText.text = Death.deathcounter.ToString("000");
-        //_totalText.text = (Score.score*10 + Enemy.killcounter*15 - Death.deathcounter*10).ToString();
+        _totalText.text = (Score.score*10 + Enemy.killcounter*15 - Death.deathcounter*10).ToString();
         Ranking.Instance.AddScore(Score.score, Enemy.killcounter, Death.deathcounter);
     }
 }

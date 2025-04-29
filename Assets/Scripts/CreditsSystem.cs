@@ -22,43 +22,43 @@ Sviluppato da
 Giuseppe Mazzara
 
 Direzione artistica
-Ludovica Ferrante
-Andrea Pagliaro
+Keanu Reeves
+Quentin Tarantino
 
 Musiche originali
-Emanuele Corsi
-Giorgia Moretti
+Hans Zimmer
+Lady Gaga
 
 Sceneggiatura
-Sofia Bellini
-Marco Ravelli
+Christopher Nolan
+Elon Musk
 
 Testi e dialoghi
-Claudio Santini
+Morgan Freeman
 
-Design UI/UX
-Martina Lodi
-Federico Gallo
+Design UI UX
+Tim Burton
+Sofia Coppola
 
 Quality Assurance
-Valerio D’Amico
-Elena Bruni
+David Attenborough
+Oprah Winfrey
 
 Effetti sonori
-Simone Lattanzi
-Beatrice Sanna
+Rami Malek
+Billie Eilish
 
 Supporto tecnico
-Riccardo Milani
+Gordon Ramsay
 
 Ringraziamenti speciali a
-Nonna Maria per i panini
-Birillo, il cane mascotte del team
-Le 136 tazzine di caffè consumate
+Mr Bean per l'ispirazione creativa
+Dwayne The Rock Johnson per la motivazione
+Le 527 tazze di caffè americano sorseggiate
 
 Tecnologie utilizzate
 Unity Engine
-Immaginazione e forza di volontà
+Un pizzico di follia internazionale
 
 Unico nome reale: Giuseppe Mazzara
 
@@ -101,7 +101,7 @@ Unico nome reale: Giuseppe Mazzara
         isScrolling = true;
     }
 
-    // Funzione per disattivare il pannello dei crediti
+    // Disable the credits panel
     public void DisableCredits()
     {
         if (creditsPanel != null)
@@ -113,6 +113,6 @@ Unico nome reale: Giuseppe Mazzara
         if (startButton != null)
             startButton.SetActive(false);
 
-        isScrolling = false; // Ferma lo scrolling
+        isScrolling = false;
     }
 }

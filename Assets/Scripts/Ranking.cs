@@ -16,7 +16,7 @@ public class Ranking : MonoBehaviour
         {
             if (_instance == null)
             {
-                _instance = FindFirstObjectByType<Ranking>(); // Trova la classe Ranking nella scenas
+                _instance = FindFirstObjectByType<Ranking>();
                 if (_instance == null)
                 {
                     Debug.LogError("Componente Ranking non trovato nella scena.");
@@ -32,12 +32,10 @@ public class Ranking : MonoBehaviour
     void Start()
     {
         LoadRanking();
-        //AddTestScores();
     }
 
     private void AddTestScores()
     {
-        // Solo per test - aggiungi alcuni punteggi di esempio se non ce ne sono
         if (scores.Count == 0)
         {
             Debug.Log("Aggiunta punteggi di test");
@@ -72,7 +70,6 @@ public class Ranking : MonoBehaviour
         }
         SaveRanking();
 
-        // Forza PlayerPrefs.Save() più volte per sicurezza
         PlayerPrefs.Save();
 
         Debug.Log($"Punteggi dopo AddScore: {scores.Count}");
@@ -93,7 +90,6 @@ public class Ranking : MonoBehaviour
         }
 
         scoreText.text = "";
-        // Usa direttamente scores invece di passare per Instance
         var topScores = new List<ScoreEntry>(scores);
 
         Debug.Log($"Numero di punteggi da visualizzare: {topScores.Count}");
@@ -104,13 +100,11 @@ public class Ranking : MonoBehaviour
             Debug.Log($"Aggiunto punteggio: {score.Score} - {score.Timestamp}");
         }
     }
-    // Ottieni i migliori punteggi
     public List<ScoreEntry> GetTopScores()
     {
         return new List<ScoreEntry>(scores);
     }
 
-    // Salva i punteggi in PlayerPrefs
     private void SaveRanking()
     {
         for (int i = 0; i < scores.Count; i++)
@@ -143,7 +137,6 @@ public class Ranking : MonoBehaviour
             }
         }
 
-        // Ordina i punteggi
         scores.Sort((x, y) => y.Score.CompareTo(x.Score));
         Debug.Log($"Totale punteggi caricati: {scores.Count}");
     }

@@ -1,21 +1,20 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class StickyPlatform : MonoBehaviour
 {
-    private void OnTriggerEnter2D(Collider2D other) 
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.gameObject.CompareTag("Player"))
+        if (other.CompareTag("Player"))
         {
-            other.gameObject.transform.SetParent(transform);
+            other.transform.SetParent(transform);
         }
     }
-    private void OnTriggerExit2D(Collider2D other) 
+
+    private void OnTriggerExit2D(Collider2D other)
     {
-        if(other.gameObject.CompareTag("Player"))
+        if (other.CompareTag("Player"))
         {
-            other.gameObject.transform.SetParent(null);
+            other.transform.SetParent(null);
         }
     }
 }

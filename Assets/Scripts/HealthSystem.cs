@@ -37,16 +37,13 @@ public class HealthSystem : MonoBehaviour
 
     private void Update()
     {
-        // Debug ogni cambio di health
         if (health != previousHealth)
         {
             Debug.Log($"Health cambiato: da {previousHealth} a {health}");
         }
 
-        // Controlla se il giocatore ha perso una vita
         if (health < previousHealth)
         {
-            // Ha perso una vita, salva il punteggio attuale
             int scoreValue = Score.score;
             int killValue = Enemy.killcounter;
             int deathValue = Death.deathcounter;
@@ -74,10 +71,8 @@ public class HealthSystem : MonoBehaviour
             }
         }
 
-        // Aggiorna il valore precedente per il prossimo confronto
         previousHealth = health;
 
-        // Gestione grafica delle vite (non modificata)
         switch (health)
         {
             case 3:
@@ -109,7 +104,6 @@ public class HealthSystem : MonoBehaviour
         }
     }
 
-    // Il resto del codice rimane invariato
     IEnumerator DeathTime()
     {
         yield return new WaitForSeconds(1f);
